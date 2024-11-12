@@ -25,6 +25,8 @@ export const translations = {
       "Action Send Gift Text": "sent gift to",
       "Sold Out": "Sold Out",
       "You don't have any gifts yet.": "You don't have any gifts yet.",
+      "This user doesn't have any gifts yet":
+        "This user doesn't have any gifts yet",
       "Open Store": "Open Store",
       Search: "Search",
       "Scroll to top": "Scroll to top",
@@ -86,6 +88,8 @@ export const translations = {
       "Action Send Gift Text": "отправил(а) подарок",
       "Sold Out": "Распродан",
       "You don't have any gifts yet.": "У вас пока нет подарков.",
+      "This user doesn't have any gifts yet":
+        "У этого пользователя пока нет подарков",
       "Open Store": "Открыть Магазин",
       Search: "Поиск",
       "Scroll to top": "Вернуться наверх",
