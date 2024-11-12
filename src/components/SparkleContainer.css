@@ -1,0 +1,66 @@
+.sparkle-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sparkle {
+  z-index: -1;
+  --sparkle-size: 50px;
+  --sparkle-life: 15s;
+
+  --start-left: 0px;
+  --start-top: 0px;
+
+  --end-left: 0px;
+  --end-top: 0px;
+
+  --sparkle-color: #ffa600;
+
+  width: var(--sparkle-size);
+  height: var(--sparkle-size);
+  left: var(--end-left);
+  top: var(--end-top);
+  background: var(--sparkle-color);
+  position: absolute;
+  animation: slide var(--sparkle-life) ease-in forwards;
+}
+
+.sparkle:after {
+  display: block;
+  content: "";
+  width: var(--sparkle-size);
+  height: var(--sparkle-size);
+  background-color: var(--bgSecondary);
+  border-radius: 30%;
+  position: relative;
+  top: calc(var(--sparkle-size) / 2 * -1);
+  left: calc(var(--sparkle-size) / 2 * -1);
+  box-shadow: var(--sparkle-size) var(--sparkle-size) var(--bgSecondary),
+    var(--sparkle-size) 0px var(--bgSecondary),
+    0px var(--sparkle-size) var(--bgSecondary);
+}
+
+[data-theme="dark"] .sparkle:after {
+  background-color: var(--bg);
+  box-shadow: var(--sparkle-size) var(--sparkle-size) var(--bg),
+    var(--sparkle-size) 0px var(--bg), 0px var(--sparkle-size) var(--bg);
+}
+
+@keyframes slide {
+  0% {
+    left: var(--start-left);
+    top: var(--start-top);
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: var(--end-left);
+    top: var(--end-top);
+    transform: scale(0.33);
+    opacity: 0;
+  }
+}

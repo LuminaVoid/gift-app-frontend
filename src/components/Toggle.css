@@ -1,0 +1,110 @@
+.toggle-container {
+  /* bgSecondary */
+  --toggle-bg: var(--bgSecondary);
+  --toggle-thumb: var(--white);
+  --toggle-text-active: var(--black);
+  --toggle-text-inactive: var(--labelSecondary);
+  display: flex;
+}
+
+[data-theme="dark"] .toggle-container {
+  --toggle-bg: var(--black);
+  --toggle-thumb: var(--bgSecondary);
+  --toggle-text-active: var(--white);
+  --toggle-text-inactive: var(--labelSecondary);
+}
+
+.toggle-container input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-container label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 80px;
+  height: 32px;
+  background: var(--toggle-bg);
+  display: block;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.35s 0.05s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-container label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 39px;
+  height: 28px;
+  background: var(--toggle-thumb);
+  border-radius: 50px;
+  box-shadow: 0px 3px 1px 0px #0000000a, 0px 3px 8px 0px #0000001f;
+  transition: 0.3s;
+}
+
+.toggle-container label > * {
+  position: absolute;
+  z-index: 1;
+  user-select: none;
+}
+
+.toggle-container label > svg {
+  height: 16px;
+  width: 16px;
+}
+
+.toggle-container label > svg:first-child {
+  left: 13px;
+  top: 8px;
+}
+
+.toggle-container label > svg:last-child {
+  right: 13px;
+  top: 8px;
+}
+
+.toggle-container label > div {
+  height: 22px;
+  width: 20px;
+  text-indent: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  text-align: center;
+}
+
+.toggle-container label > div:first-child {
+  top: 5px;
+  left: 11.5px;
+}
+
+.toggle-container input:not(:checked) + label > div:last-child,
+.toggle-container input:checked + label > div:first-child {
+  /* Inactive thumb text */
+  color: var(--toggle-text-inactive);
+}
+.toggle-container input:checked + label > div:last-child,
+.toggle-container input:not(:checked) + label > div:first-child {
+  /* Active thumb text */
+  color: var(--toggle-text-active);
+}
+
+.toggle-container label > div:last-child {
+  top: 5px;
+  right: 11.5px;
+}
+
+.toggle-container input:checked + label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+  box-shadow: 0px 3px 1px 0px #0000000a, 0px 3px 8px 0px #0000001f;
+}
+
+.toggle-container input:disabled + label {
+  cursor: not-allowed;
+}

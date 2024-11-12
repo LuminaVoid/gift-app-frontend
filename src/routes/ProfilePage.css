@@ -1,0 +1,48 @@
+.profile-header {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 12px;
+}
+
+.profile-header > :nth-child(3) {
+  justify-self: flex-end;
+}
+
+.profile-info {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-username {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-received-gifts {
+  margin-top: 4px;
+
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.44px;
+  color: var(--labelSecondary);
+}
+
+.profile-recent-actions {
+  margin: 24px 0px 8px 0px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--primary);
+
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43;
+  text-align: center;
+}

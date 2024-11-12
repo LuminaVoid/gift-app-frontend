@@ -1,0 +1,82 @@
+ul {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100dvw;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--bgTabBar);
+  padding-top: 8px;
+  padding-bottom: var(--safe-area-inset-bottom);
+  min-height: 58px;
+  border-top: 1px solid var(--separator);
+  z-index: 1;
+}
+
+ul > li {
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+ul a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 64px;
+}
+
+.navlink > div {
+  filter: saturate(0) brightness(1.31);
+  transition: filter 0.5s;
+}
+
+.navlink.active > div {
+  filter: saturate(1) brightness(1);
+}
+
+.lottie-icon {
+  filter: brightness(0) saturate(100%) invert(33%) sepia(88%) saturate(4017%)
+    hue-rotate(202deg) brightness(105%) contrast(104%);
+}
+
+/* iOs & Safari applies filters a bit differently, hence the adjustment */
+_::-webkit-full-page-media,
+_:future,
+:root .lottie-icon {
+  filter: brightness(0) saturate(100%) invert(33%) sepia(88%) saturate(4017%)
+    hue-rotate(185deg) brightness(105%) contrast(38%);
+}
+
+.tab-name {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: var(--labelTabBar);
+  transition: color 0.4s;
+}
+
+.active .tab-name {
+  color: var(--primary);
+  animation: tab-name-bounce 0.4s;
+}
+
+@keyframes tab-name-bounce {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+
+  50% {
+    transform: scale(0.92) translateY(-1px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+}

@@ -1,0 +1,10 @@
+#store-page {
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+#store-page.store-page-backdrop {
+  transform: scale(0.9);
+  overflow-y: hidden;
+  filter: blur(5px);
+  opacity: 0;
+}

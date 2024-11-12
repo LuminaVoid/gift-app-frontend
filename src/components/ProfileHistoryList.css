@@ -1,0 +1,71 @@
+.profile-history-item {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  column-gap: 12px;
+  padding: 8px 16px;
+  align-items: center;
+  position: relative;
+}
+
+.profile-history-item:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  width: calc(100% - 84px);
+  bottom: 0;
+  left: 68px;
+  box-shadow: 0 0 0 0.33px var(--separator);
+}
+
+.profile-history-item > div:first-child {
+  border-radius: 10px;
+  background-color: var(--bgSecondary);
+  position: relative;
+}
+
+.profile-history-item > div:first-child > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.profile-history-item > div:first-child > svg {
+  position: absolute;
+  bottom: -1px;
+  right: -2px;
+  border: 1.33px solid var(--bg);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-content: center;
+}
+
+.profile-history-item-icon-send > svg {
+  background-color: var(--accentGreen);
+}
+
+.profile-history-item-icon-purchase > svg {
+  background-color: var(--primary);
+}
+
+.profile-history-item-icon-receive > svg {
+  background-color: var(--accentPurple);
+}
+
+.profile-history-item > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-history-item > div:last-child {
+  text-align: right;
+  justify-self: flex-end;
+}
+
+.history-date {
+  padding: 24px 16px 12px 16px;
+}
+
+.profile-history-item .skeleton-shimmer,
+.history-date .skeleton-shimmer {
+  background-color: var(--bgSkeleton);
+}

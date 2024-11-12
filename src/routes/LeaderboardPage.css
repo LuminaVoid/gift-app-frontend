@@ -1,0 +1,12 @@
+#leaderboard-page {
+  display: grid;
+  grid-template-rows: 54px 1fr;
+}
+
+#leaderboard-page > div:first-child {
+  padding: 10px 10px 8px 10px;
+}
+
+.no-search-results-container {
+  padding: 16px;
+}

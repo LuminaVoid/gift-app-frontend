@@ -1,0 +1,41 @@
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  padding: 16px 16px 100px 16px;
+  height: max-content;
+  width: 100dvw;
+  background-color: var(--bgSecondary);
+  z-index: 2;
+}
+
+[data-theme="dark"] .bottom-sheet {
+  background-color: var(--bg);
+}
+
+.bottom-sheet-backdrop {
+  background-color: #000000;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.bottom-sheet-close {
+  background-color: #e3e3e8;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  right: 16px;
+  top: 12px;
+}
+
+[data-theme="dark"] .bottom-sheet-close {
+  background-color: var(--bgSecondary);
+}

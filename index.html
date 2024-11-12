@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift App</title>
+    <style>
+      #not-mobile {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        #not-mobile {
+          background-color: var(--bg);
+          width: 100dvw;
+          height: 100dvh;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="not-mobile">The app is only available on mobile devices</div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

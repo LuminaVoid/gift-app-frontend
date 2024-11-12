@@ -1,0 +1,11 @@
+.empty-data-message {
+  background-color: var(--bgSecondary);
+  border-radius: 12px;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  text-align: center;
+}

@@ -1,0 +1,35 @@
+.recent-action {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: 12px;
+  padding: 12px 0px;
+  position: relative;
+}
+
+.recent-action:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  width: calc(100% - 52px);
+  bottom: 0;
+  left: 52px;
+  box-shadow: 0 0 0 0.33px var(--separator);
+}
+
+.recent-action-profile-pic {
+  grid-row: 1 / 3;
+}
+
+.recent-action-type {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.recent-action-description {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.44px;
+}

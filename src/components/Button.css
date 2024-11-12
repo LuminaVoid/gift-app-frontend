@@ -1,0 +1,64 @@
+button {
+  border: none;
+  outline: none;
+  padding: 3px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-normal {
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 100px;
+
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  text-align: center;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  height: 30px;
+}
+
+.button-normal:active {
+  background-color: var(--accentCyan);
+}
+
+.button-normal:disabled {
+  background: color-mix(in srgb, var(--labelSecondary) 20%, transparent);
+}
+
+.button-normal:disabled > span {
+  color: var(--labelSecondary);
+}
+
+.button-normal > img {
+  width: 24px;
+  height: 24px;
+}
+
+.button-text {
+  background: transparent;
+  color: var(--primary);
+
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43;
+}
+
+.button-text-small {
+  background: transparent;
+  color: var(--accentCyan);
+  padding: 3px 0px;
+
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43;
+}

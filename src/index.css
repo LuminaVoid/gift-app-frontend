@@ -1,0 +1,219 @@
+:root {
+  /* Theme-independent colors */
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --primary: #007aff;
+  --accentBlue: rgba(0, 122, 255, 1);
+  --accentCyan: rgba(90, 200, 250, 1);
+  --accentGold: rgba(241, 170, 5, 1);
+  --accentPurple: rgba(175, 81, 222, 1);
+  --accentGreen: rgba(53, 199, 89, 1);
+  --labelSecondary: #8e8e93;
+  --labelDate: #6d6d71;
+
+  /* Light copy */
+  --bg: #ffffff;
+  --bgSecondary: #efeff3;
+  --bgTabBar: #f1f1f2bf;
+  --labelTabBar: #545458a6;
+  --search-placeholder-clr: #3c3c4399;
+  --bgSkeleton: #bebebe;
+  --bgNotification: #2d2d2dcc;
+  --shimmerClr: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 60%
+  );
+  --separator: #3c3c435c;
+
+  /* used in app */
+
+  /* Not used yet */
+  --icons: #959595;
+  --tabBarIcon: #959595;
+
+  --hp: 16px; /* default horizontal paddings */
+
+  --safe-area-inset-bottom: 16px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --bgSecondary: #efeff3;
+  --bgTabBar: #f1f1f2bf;
+  --labelTabBar: #545458a6;
+  --text: #000000;
+  --search-placeholder-clr: #3c3c4399;
+  --bgSkeleton: #bebebe;
+  --bgNotification: #2d2d2dcc;
+  --separator: #3c3c435c;
+  --shimmerClr: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 60%
+  );
+}
+
+html[data-theme="dark"] {
+  --bg: #1c1c1e;
+  --bgSecondary: #2c2c2e;
+  --bgTabBar: #1e1e1ebf;
+  --labelTabBar: #8e8e8e;
+  --text: #ffffff;
+  --search-placeholder-clr: var(--labelSecondary);
+  --bgSkeleton: #343434;
+  --bgNotification: #000000cc;
+  --separator: #ffffff33;
+  --shimmerClr: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 60%
+  );
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@supports (-webkit-touch-callout: none) {
+  :root {
+    /* Proper safe-area-inset-bottom is not working in tg https://github.com/TelegramMessenger/Telegram-iOS/issues/1377 */
+    --safe-area-inset-bottom: 34px;
+  }
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-weight: 400;
+  src: url(./assets/fonts/SFProText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-weight: 500;
+  src: url(./assets/fonts/SFProText-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-weight: 600;
+  src: url(./assets/fonts/SFProText-Semibold.ttf) format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Text", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100dvw;
+  width: 100dvw;
+  min-height: 100dvh;
+  height: 100dvh;
+}
+
+#root {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr calc(58px + var(--safe-area-inset-bottom));
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 16px 0px;
+  max-width: 100%;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 16px 0px;
+}
+
+.lottie-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  padding: 0 var(--hp);
+}
+
+.abs-page {
+  position: fixed;
+  overflow-y: scroll;
+  max-height: 100dvh;
+  width: 100dvw;
+  /* Check this padding bottom and stuff */
+  padding: 16px var(--hp) 100px var(--hp);
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.centered {
+  display: grid;
+  place-content: center;
+}
+
+.skeleton-shimmer {
+  background: var(--shimmerClr) #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 0.8s shimmer ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.user-highlight {
+  color: var(--primary);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 24px auto 16px auto;
+  max-width: 330px;
+  text-align: center;
+}
+
+.hero > img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
